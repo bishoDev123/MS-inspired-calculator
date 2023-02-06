@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Calculator</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <div class="calculator-container">
+            <div class="result" id="result"> 569821 </div>
+            <div class="buttons-container">
+                <button class="orange-button">AC</button>
+                <button>
+                    🤓
+                </button>
+                <button class="orange-button">%</button>
+                <button class="orange-button">÷</button>
+                <button onclick="result.value = '7'">7</button>
+                <button>8</button>
+                <button>9</button>
+                <button class="orange-button">x</button>
+                <button>4</button>
+                <button>5</button>
+                <button>6</button>
+                <button class="orange-button">-</button>
+                <button>1</button>
+                <button>2</button>
+                <button>3</button>
+                <button class="orange-button">+</button>
+                <button>0</button>
+                <button>.</button>
+                <button class="equal-button">=</button>
+            </div>
+        </div>
+
+
+        <script>
+            let result = document.getElementById('result');
+
+            let buttons = Array.from(document.getElementsByTagName('button'));
+            
+            buttons.map( button => {
+                button.addEventListener('click', (e) => {
+                    switch(e.target.innerText) {
+                        case 'AC':
+                            result.innerText = '';
+                            break;
+
+                        case '🤓':
+                            result.innerText = result.innerText.slice(0, -1);
+                            break;
+
+                        default:
+                            result.innerText += e.target.innerText;
+                    }
+                })
+            })
+        </script>
+    </body>
+</html>
