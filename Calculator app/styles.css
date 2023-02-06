@@ -5,6 +5,9 @@ body {
 
 .calculator-container {
     display: flex;
+    position: absolute;
+    left: 50%;
+    right: 40%;
     justify-content: flex-end;
     width: 360px;
     flex-flow: column;
@@ -21,6 +24,10 @@ body {
     margin-top: 50px;
     margin-right: 10px;
     margin-bottom: 30px;
+}
+
+.result-container {
+    height: 120px;
 }
 
 .remove-text-icon {

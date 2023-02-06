@@ -9,7 +9,9 @@
     </head>
     <body>
         <div class="calculator-container">
-            <div class="result" id="result"> 569821 </div>
+            <div class="result-container">
+                <div class="result" id="result"> 569821 </div>
+            </div>
             <div class="buttons-container">
                 <button class="orange-button">AC</button>
                 <button>
@@ -17,10 +19,10 @@
                 </button>
                 <button class="orange-button">%</button>
                 <button class="orange-button">÷</button>
-                <button onclick="result.value = '7'">7</button>
+                <button>7</button>
                 <button>8</button>
                 <button>9</button>
-                <button class="orange-button">x</button>
+                <button class="orange-button">*</button>
                 <button>4</button>
                 <button>5</button>
                 <button>6</button>
@@ -50,6 +52,10 @@
 
                         case '🤓':
                             result.innerText = result.innerText.slice(0, -1);
+                            break;
+
+                        case '=':
+                            result.innerText = eval(result.innerText);
                             break;
 
                         default:
